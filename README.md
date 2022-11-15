@@ -1,5 +1,8 @@
 # Clips
 
+![clipz](https://user-images.githubusercontent.com/50408944/201930850-3e995b31-9d50-4c65-a8cc-038a8678aa50.png)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
 ## Development server
