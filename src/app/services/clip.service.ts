@@ -30,6 +30,7 @@ export class ClipService implements Resolve<IClip | null> {
   public clipsCollection: AngularFirestoreCollection<IClip>;
   pageClips: IClip[] = [];
   pendingReq = false;
+  heroClipUrl: string = "";
 
   constructor(
     private db: AngularFirestore,
@@ -101,6 +102,12 @@ export class ClipService implements Resolve<IClip | null> {
     });
 
     this.pendingReq = false;
+  }
+
+  async getHeroClip() {
+    const clipRef = this.storage.ref(`hero/hero.webm`);
+    const url = await lastValueFrom(clipRef.getDownloadURL());
+    this.heroClipUrl = url;
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
